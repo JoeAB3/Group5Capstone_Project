@@ -20,5 +20,18 @@ Our goal is to predict the total number of medals won by each country in the Sum
 
 Due to the nature of our data, we will use a PostgreSQL database to save our data sets. Our database will initially have two tables: `Indicators` and `OlympicMedals`. Below there is a rough schema of each table:
 
-```
+```psql
+CREATE TABLE Indicators (
+  Country_Code character(3) NOT NULL,
+  GDP_growth integer NOT NULL,
+  GNI_growth integer NOT NULL,
+  Population integer NOT NULL,
+  Year character NOT NULL,
+  HDI integer NOT NULL,
+  HDI_Rank integer NOT NULL,
+);
 
+Schema for Olympic Data
+```
+After we clean and pre-process the original datasets in Jupyter Notebook, we will write them to `PostgreSQL` tables.
+While in `PgAdmin` we will need to create the database and tables with the schema presented above.

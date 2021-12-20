@@ -9,12 +9,9 @@ In addition to this dataset, we have added another index from [**United Nations*
 
 With these two datasets we have created a joined dataframe that contains four indicators measured anually and for each country.  Because the HDI has been only reported since 1990, we are considered only the frame of time: 1990-2019.  
 
-(Joe could add here the description of the Olympic data)
-
-
 ## 2. Machine Learning:
 
-Our goal is to predict the total number of medals won by each country in the Summer Olympic Games. Because, the olympic games are highly dominated for 3 or 4 countries, this data will be highly skewed.  Therefore, we need to make a Regression Model that can handle this kind of data such as -------- (model(s) that Bret has found online with links or references. You can add some basic explanation of the model and why you think it is going to work).
+Our goal is to predict the total number of medals won by each country in the Summer Olympic Games. Because, the olympic games are dominated for 3 or 4 countries, this data will be highly skewed.  Therefore, we need to use a Regression Model that can handle this kind of data. We would need to analyze further the data and to do some research that allows us to find the more suitable model.
 
 ## 3. Database:
 
@@ -28,10 +25,17 @@ CREATE TABLE Indicators (
   Population integer NOT NULL,
   Year character NOT NULL,
   HDI integer NOT NULL,
-  HDI_Rank integer NOT NULL,
+  HDI_Rank integer NOT NULL
 );
 
-Schema for Olympic Data
+CREATE TABLE Olympics(
+  Country_Code character(3) NOT NULL,
+  Year integer NOT NULL,
+  GOLD_Medals integer NOT NULL,
+  SILVER_Medals integer NOT NULL,
+  BRONZE_Medals integer NOT NULL,
+  TOTAL_Medals integer NOT NULL
+);
 ```
 After we clean and pre-process the original datasets in Jupyter Notebook, we will write them to `PostgreSQL` tables.
 While in `PgAdmin` we will need to create the database and tables with the schema presented above.

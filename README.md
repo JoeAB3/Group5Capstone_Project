@@ -20,7 +20,7 @@ Our goal is to predict the total number of medals won by each country in the Sum
 
 Due to the nature of our data, we will use a PostgreSQL database to save our data sets. Our database will initially have two tables: `Indicators` and `OlympicMedals`. Below there is a rough schema of each table:
 
-```psql
+```sql
 CREATE TABLE Indicators (
   Country_Code character(3) NOT NULL,
   GDP_growth integer NOT NULL,

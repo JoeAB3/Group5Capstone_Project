@@ -34,7 +34,7 @@ Our goal is to predict the total number of medals won by each country in the Sum
 
 We have determined that our dependent variable will be a countries total medal count, and our independent variables will be a countries HDI Rank, gdp growth(annual), GNI growth (annual), and total population.
 
-A random forest linear regression model will be used to try and forecast the total medal count. When researching which model to use, we learned that random forest algorithms have proven to be advantageous in sports forecasting. 
+A random forest linear regression model will be used to try and forecast the total medal count. When researching which model to use, we learned that random forest algorithms have proven to be advantageous in sports forecasting. [Resource](https://arxiv.org/pdf/2012.04378.pdf)
 
 Random forest regression is a supervised learning algorithm that uses ensemble learning for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.  A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees.
 

@@ -12,10 +12,10 @@ The team is interested in economics and sports
 
 ## Communication Protocols:
 
-•	Slack group containing all group members
-•	Team meetings during scheduled class hours on Monday and Wednesday
-•	Additional team meetings twice a week on zoom 
-•	Individual GitHub branch for each team member
+*	Slack group containing all group members
+*	Team meetings during scheduled class hours on Monday and Wednesday
+*	Additional team meetings twice a week on zoom 
+*	Individual GitHub branch for each team member
 
 
 ## 1. Data Exploration:

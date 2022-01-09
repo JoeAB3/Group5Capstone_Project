@@ -16,7 +16,7 @@ The team is interested in economics and sports
 
 Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidybranch/pre-processingWBD.ipynb).
 
-<mark> The Olympic data ... </mark>. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidybranch/pre-processingWBD.ipynb).
+<mark> The Olympic data ... </mark>. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidybranch/CodeInJupyter/pre-processingOlympicGames.ipynb).
 
 ## Communication Protocols:
 
@@ -33,26 +33,26 @@ Because the HDI has been only reported since 1990, we are considered only the fr
 
 To determine if there are indicators that are highly correlated between them, we perform a scattermatrix between the economic indicators and in our further analysis only considered indicators that are not correlated. Figure 1 shows the scattermatrix, where it is possible to see how `GDP` and `GNI` as well as `HDI` and `HDI Rank` are higly correlated
 
-![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/ImagesReadme/scatterMatrix.png)
+![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/scatterMatrix.png)
 Figure 1. Scattermatrix of all indicators
 
 ### Economic Indicators per Olympic Years:
 
 We want to see how the economic factors have varied along the years for each country, so we plot each indicator as a variable of the olympic years per country. We use `hvplot` library to make these plots and although in Pandas, the country can be chosen from a drop-down list bottom, it still is not possible in the python script. Figure 2 shows how the plot looks for a specific country.
 
-![econo](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/ImagesReadme/Indicators_OYears.png)
+![econo](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Indicators_OYears.png)
 Figure 2. Economic Indicators vs. Olympic Year
 
 ### Olympic Performance per Country
 
 We also want to check how the countries perform at olympic games along the years. Figure 3 is an example of the histogram that we made to show how is the participation of each country.
 
-![olymps](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/ImagesReadme/Top15_OYears.png)
+![olymps](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Top15_OYear.png)
 Figure 3. Top15 Countries vs. Olympic Year
 
 ## 2. Machine Learning:
 
-In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership.
+In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. 
 
 
 
@@ -78,7 +78,7 @@ indicators_df
 
 Below there is the `ERD` Diagram for our database:
 
-[ERD]()
+![ERD](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/QuickDBD-export.png)
 Figure. ERD for OlympicAnalysis Database.
 
 ### Includes at least one join using the database language:

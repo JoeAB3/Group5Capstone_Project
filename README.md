@@ -116,5 +116,5 @@ Link to Google Slides:
 https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing
 
 ## 5. Dashboard
-The dashboard will display the images generated in the data exploration phase of the project. The scatter matrix will be displayed to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country. Lastly, the histogram showing a countries performance by olypic game will be used. This will also be filtered by country. Flask, python, and html will be used to build our dashboard. 
+The dashboard will display the images generated in the data exploration phase of the project. The scatter matrix will be displayed to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country. Lastly, the histogram showing a countries performance by olympic game will be used. This will also be filtered by country. Flask, python, and html will be used to build our dashboard. 
 

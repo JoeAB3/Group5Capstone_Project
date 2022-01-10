@@ -17,7 +17,7 @@ The team is interested in economics and sports
 
 Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidybranch/pre-processingWBD.ipynb).
 
-<mark> The Olympic data ... </mark>. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidybranch/CodeInJupyter/pre-processingOlympicGames.ipynb).
+<mark> For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set.</mark>. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidybranch/CodeInJupyter/pre-processingOlympicGames.ipynb).
 
 ## Communication Protocols:
 
@@ -110,7 +110,6 @@ db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis
     with engine.connect() as con:
         con.execute('ALTER TABLE "Olympics" ADD PRIMARY KEY ("CountryCode","Year");')
 ```
-## 4. Dashboard
 
 ## 4. Presentation
 Link to Google Slides:

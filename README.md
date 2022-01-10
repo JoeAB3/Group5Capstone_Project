@@ -1,3 +1,4 @@
+
 # Analyzing How the Economic Factors could impact the Performance of Countries in the Summer Olympic Games
 
 In our final project, we are interested in analyze how different economic factors could impact the performance of countries when they participate in the Summer Olympic Games. <mark>We have counted the total events in which each country has finished at the Top 15 at each Olympic Game since 1992. A country with a good performance, in our analysis, is a country that has finished within the first 15 places.</mark>
@@ -109,5 +110,7 @@ db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis
     with engine.connect() as con:
         con.execute('ALTER TABLE "Olympics" ADD PRIMARY KEY ("CountryCode","Year");')
 ```
-## 4. Dashboard
 
+## 4. Presentation
+Link to Google Slides:
+https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing

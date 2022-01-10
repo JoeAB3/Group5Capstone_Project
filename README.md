@@ -51,7 +51,7 @@ Figure 3. Top15 Countries vs. Olympic Year
 
 ## 2. Machine Learning:
 
-In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notwbook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/knnAnalysis.ipynb)
+In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notwbook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
 
 ### Description of preliminary data preprocessing: 
 

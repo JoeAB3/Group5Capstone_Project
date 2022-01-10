@@ -36,6 +36,6 @@ Schema for Olympic Data
 After we clean and pre-process the original datasets in Jupyter Notebook, we will write them to `PostgreSQL` tables.
 While in `PgAdmin` we will need to create the database and tables with the schema presented above.
 
-## 3. Presentation
+## 4. Presentation
 Link to Google Slides:
 https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing

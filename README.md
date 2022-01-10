@@ -1,6 +1,6 @@
 # Analyzing How the Economic Factors could impact the Performance of Countries in the Summer Olympic Games
 
-In our final project, we are interested in analyze how different economic factors could impact the performance of countries when they participate in the Summer Olympic Games. <mark>We have counted the total events in which each country has finished at the Top 15 at each Olympic Game since 1992. A country with a good performance, in our analysis, is a country that has finished within the first 15 places.</mark>
+In our final project, we are interested in analyze how different economic factors could impact the performance of countries when they participate in the Summer Olympic Games. We have counted the total events in which each country has finished at the Top 15 at each Olympic Game since 1992. A country with a good performance, in our analysis, is a country that has finished within the first 15 places.
 
 ## Reason we chose this topic:
 
@@ -9,14 +9,13 @@ The team is interested in economics and sports
 ## Questions we hope to answer with the data:
 
 - Does a countries HDI, annual GDP or total population contribute to a countries performance at the olympics?
-- <mark>How are countries distributed depending on their economic factors and performance at the Olympics? Is there some natural clustering?
-</mark>
+- How are countries distributed depending on their economic factors and performance at the Olympics? Is there some natural clustering?
 
 ## Description of source of data:
 
-Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidybranch/pre-processingWBD.ipynb).
+Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/CodeInJupyter/pre-processingWBD.ipynb).
 
-For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidybranch/CodeInJupyter/pre-processingOlympicGames.ipynb).
+For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidybranch/CodeInJupyter/Pre-processingOlympicGames.ipynb).
 
 ## Communication Protocols:
 
@@ -52,10 +51,20 @@ Figure 3. Top15 Countries vs. Olympic Year
 
 ## 2. Machine Learning:
 
-In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. 
+In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notwbook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
 
+### Description of preliminary data preprocessing: 
 
+We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `Population`, `Top15` for each country and each Olympic Game.  Because there are multiple values for the same parameters (since we are considering 7 olympic games), we are going to consider an analyis per Olympic Game. This means, will have a clustering of the countries per each Olympic year.
 
+### Description of preliminary feature engineering:
+
+Because we have several economic factors that could be related, we calculate the correlation between these factors. This was carried out by using the scatter matrix that is shown in Figure 1. After this process we keep the 4 factors/indicators previously listed.
+
+### Explanation of model choice, including limitations and benefits
+
+Because we do not have any priori information about how the countries could be categorized depending on how they perform economically and at the Olympic Games, we want to explore if there is an actual separation or relationship among them.  In this way, we choose the widely known `K-means` algorithm. The benefit of using k-means is that is simple to implement, fast, and guarantees convergence. However, its limitation is that we need to assume prior information about the data, such the number of clusters (`k`). 
+ 
 ## 3. Database:
 
 Due to the nature of our data, we use a PostgreSQL database to save three tables: `Indicators`, `Olympics`, and `DataAnalysis`. Based on the two first tables, we create the third one with the economic indicators of our interest and the information about the Olympic Games. The Python sripts for the data exploration and analysis have code that fully integrate the database. The details are explained further.
@@ -79,6 +88,7 @@ indicators_df
 Below there is the `ERD` Diagram for our database:
 
 ![ERD](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/QuickDBD-export.png)
+
 Figure. ERD for OlympicAnalysis Database.
 
 ### Includes at least one join using the database language:
@@ -111,8 +121,7 @@ db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis
 ```
 
 ## 4. Presentation
-Link to Google Slides:
-https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing
+Link to Google Slides of presentation is [here](https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing).
 
 ## 5. Dashboard
 The dashboard will display the images generated in the data exploration phase of the project. The scatter matrix will be displayed to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country. Lastly, the histogram showing a countries performance by olympic game will be used. This will also be filtered by country. Flask, python, and html will be used to build our dashboard. 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Analysis Olympics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!-- overrating the bootstrap style, calling custome css-->
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/custom.css')}}" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      <div class="jumbotron text-center">
+        <h1>Analysis Olympic Games</h1>
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg" href="/clustering" role="button">Clustering</a></p>
+      </div>
+
+      <!--Section for clustering plot and menu-->
+      <div class="row" id="scatter-Ogame">
+
+      <form action="/clustering">
+        <label for="years">Choose a year:</label>
+        <select name="years" id="years">
+          <option value="1992">1992</option>
+          <option value="1996">1996</option>
+          <option value="2000">2000</option>
+          <option value="2004">2004</option>
+          <option value="2008">2008</option>
+          <option value="2012">2012</option>
+          <option value="2016">2016</option>
+          <option value="2020">2020</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+        <div class="page-header">
+            <h2 class="text-center"> "Barcelona 1992"</h2>
+        </div>
+
+        <div class="media">
+            <div class="media-body">
+              <!--<img src="static/images/{{fig}}"alt="...">  -->
+              <iframe src="static/images/clustering.html" width="1024" height = "768"></iframe>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

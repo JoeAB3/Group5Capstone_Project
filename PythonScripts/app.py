@@ -27,17 +27,21 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-
-    return render_template("index.html", fig = "clustering.html")
+    return render_template("index.html")
 
 @app.route('/clustering')
 def plot_kmeans():
+    city_names = {1992:'Barcelona', 1996:'Atlanta', 2000:'Sydney', 2004:'Athens', 
+                  2008:'Beijing', 2012:'London', 2016:'Rio', 2020:'Tokyo'}
     print('running kmeans')
     year = int(request.args.get('years'))
     print(year)
-    plot_indsc = Kmean_Olympics(olympics_df,year)
-    plot_indsc.write_html("static/images/clustering.html")
-    return redirect('/', code=302)
+    plot_indsc, plot_map = Kmean_Olympics(olympics_df,year)
+    game_name = f"{city_names[year]}, {year}"
+    plot_indsc.write_html(f"static/images/clustering-{year}.html")
+    # return redirect('/', code=302)
+    plot_map.write_html(f"static/images/map-{year}.html")
+    return render_template("index.html", years=year, game_name=game_name)
     
 if __name__=='__main__':
     app.run(debug=True)

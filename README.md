@@ -134,7 +134,7 @@ A second dashboard built in `Flask` and `html` template will present the finding
 ![dashboard](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/OverviewDashboard.png)
 Figure 5. An overview of the dashboard created for showing UML results.
 
-**The dashboard has an interactive element** that is a `selector` input with a `submit` button. These two elements jointly allow the user to choose what Olympic year wants to see. Figure 6 shows how these two elements are displayed in the dashboard page. The `html` [template](https://github.com/JoeAB3/Group5Capstone_Project/blob/main/PythonScripts/template/html) and the `css` [file](https://github.com/JoeAB3/Group5Capstone_Project/blob/main/PythonScripts/assets/css/custom.css) that allows the user this interaction are upload.
+**The dashboard has an interactive element** that is a `selector` input with a `submit` button. These two elements jointly allow the user to choose what Olympic year wants to see. Figure 6 shows how these two elements are displayed in the dashboard page. The `html` [template](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/PythonScripts/templates/index.html) and the `css` [file](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/PythonScripts/static/assets/css/custom.css) that allows the user this interaction are upload.
 
 ![dashboard1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Dashboard_Interaction.png)
 Figure 6. The dashboard with the interactive element.

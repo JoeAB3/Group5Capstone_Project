@@ -116,7 +116,7 @@ Link to Google Slides:
 https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing
 
 ## 5. Dashboard
-We will have two dashboards to display the findings of our project. The Data Exploration/Analysis dashboard will display the scatter matrix to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country.
+We will have two dashboards to display the findings of our project. The Data Exploration/Analysis dashboard will display the scatter matrix to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country. The economic indicators are currently filtered to display the United States.
 
 ![](https://github.com/JoeAB3/Group5Capstone_Project/blob/bomalley_branch/Tableau_Resources/Dashboard_1.png)
 ![](https://github.com/JoeAB3/Group5Capstone_Project/blob/bomalley_branch/Tableau_Resources/Dashboard_2.png)

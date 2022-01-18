@@ -17,6 +17,7 @@
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron">
         <h1 style="font-size:40px;">Dashboard</h1>
+
         <nav class="navbar navbar-expand-lg" style="background-color: #d0cafc45">
           <form action="/loading">
             <!--adding button for creating database-->
@@ -38,6 +39,7 @@
               <input  align="center" type="submit" value="Submit" class="btn btn-primary"> 
             </form>
         </nav>
+
       </div>  
       <!--Section for choosing Clustering and Plots -->
       <div class="container-fluid">
@@ -50,13 +52,30 @@
             </div>
             <div class="card-body" style="border-color:#0f1b88;" align ="center"> <!--space for scatterplot-->
                 {% if years is defined %}
-                  <iframe src="static/images/clustering-{{years}}.html" width="800" height = "500"></iframe>
-                  <iframe src="static/images/map-{{years}}.html" width="800" height = "500"></iframe>
+
+                  <div class="row"> 
+                    <div class="col-md-6">
+                      <div class="embed-responsive embed-responsive-4by3">
+                        <iframe frameborder='0' scrolling='no' 
+                        src='static/images/clustering-{{years}}.html' 
+                        class="embed-responsive-item" style="border:none;" ></iframe>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="embed-responsive embed-responsive-4by3">
+                        <iframe frameborder='0' scrolling='no' 
+                        src='static/images/map-{{years}}.html' 
+                        class="embed-responsive-item" style="border:none;" ></iframe>
+                      </div>
+                    </div>
+                  </div>
+
                 {% else %}
                     <!-- nothing  -->
                   {% endif %}
             </div>
-          </div>    
+          </div> 
+
         </div>    
       </div>
     </div>

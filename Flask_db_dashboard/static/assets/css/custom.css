@@ -29,7 +29,7 @@
 }
 /* changing color of jumbotron to green and white*/
 .jumbotron{
-    background-image: url("../../images/logoOlympics1.png");
+    background-image: url("logoOlympics1.png");
     color: #0f1b88;
     min-height: 50px;
 }

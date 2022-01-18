@@ -20,10 +20,12 @@ app = Flask(__name__)
 
 #setup the database
 print('setup the database')
-db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis_FP"
+#db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis_FP"
+db_string = 'sqlite:///db.sqlite'
+
 #Create the database engine
 print('create engine')
-engine = create_engine(db_string)
+engine = create_engine(db_string, echo=True)
 
 # create the first route
 @app.route('/')

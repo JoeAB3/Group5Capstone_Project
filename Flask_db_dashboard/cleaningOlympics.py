@@ -51,5 +51,5 @@ def cleaning_olympics(engine):
     
     ## Add olympics_df to a SQL db
     olympic_df.to_sql(name = 'Olympics', con = engine, if_exists = 'replace', index = False) 
-    with engine.connect() as con:
-        con.execute('ALTER TABLE "Olympics" ADD PRIMARY KEY ("CountryCode","Year");')
+    #with engine.connect() as con:
+    #    con.execute('ALTER TABLE "Olympics" ADD PRIMARY KEY ("CountryCode","Year");')

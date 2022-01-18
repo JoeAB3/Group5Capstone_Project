@@ -75,6 +75,6 @@ def cleaning_economics(engine):
 
         ## Add df_merge to a SQL db
         ind_df.to_sql(name = 'Indicators', con = engine, if_exists = 'replace', index = False) 
-        with engine.connect() as con:
-                con.execute('ALTER TABLE "Indicators" ADD PRIMARY KEY ("CountryCode","Year");')
+        #with engine.connect() as con:
+        #        con.execute('ALTER TABLE "Indicators" ADD PRIMARY KEY ("CountryCode","Year");')
 

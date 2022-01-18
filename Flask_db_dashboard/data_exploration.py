@@ -22,6 +22,6 @@ def creating_data(engine):
     df_data.to_sql(name = 'Analysis', con = engine, if_exists = 'replace', index = False) 
     # Add primary keys
     df_data.to_sql(con=engine, name='Analysis', if_exists='replace', index=False)
-    with engine.connect() as con:
-        con.execute('ALTER TABLE "Analysis" ADD PRIMARY KEY ("CountryCode","Year");')
+    #with engine.connect() as con:
+    #    con.execute('ALTER TABLE "Analysis" ADD PRIMARY KEY ("CountryCode","Year");')
     

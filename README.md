@@ -61,6 +61,13 @@ We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `P
 
 Because we have several economic factors that could be related, we calculate the correlation between these factors. This was carried out by using the scatter matrix that is shown in Figure 1. After this process we keep the 4 factors/indicators previously listed.
 
+### Training and Testing of data with results
+Data was trained and testing by splitting the dataset into groups, with the training group consisting of 80 percent of the dataset while the testing group consisted of only 20 percent of the dataset. A random state of 10 was used to keep the training and testing groups the same over a period of multiple tests. The model was trained using a Linear Regression Model, allowing for a predictive linear regression chart to be created. However, due to the dataset not having enough data points present during the training and testing phases, the best choice was to switch to unsupervised learning in order to achieve optimal data analysis and exploration.
+
+![Train and Test setup](https://user-images.githubusercontent.com/88119309/150042125-17407ac8-92d3-4895-adc4-9432ba68f03c.PNG)
+![Linear Regression prediction](https://user-images.githubusercontent.com/88119309/150042166-ce0b390b-1e32-4db7-8abf-06edea53cef9.PNG)
+
+
 ### Explanation of model choice, including limitations and benefits
 
 Because we do not have any priori information about how the countries could be categorized depending on how they perform economically and at the Olympic Games, we want to explore if there is an actual separation or relationship among them.  In this way, we choose the widely known `K-means` algorithm. The benefit of using k-means is that is simple to implement, fast, and guarantees convergence. However, its limitation is that we need to assume prior information about the data, such the number of clusters (`k`). 

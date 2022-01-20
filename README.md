@@ -172,9 +172,9 @@ Figure 8. The dashboard with the interactive elements.
 ![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
 Figure 9. Clustering of countries shown in different colors in the scatterplot and world map.
 
-## Dashboard Deploy in Heroku
+## Dashboard Deployed in Heroku
 
-Our dashboard is deploy in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [olympic_analysis_deployment] (https://github.com/JoeAB3/Group5Capstone_Project/tree/main/olympic_analysis_deployment) folder.
+Our dashboard is deployed in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [olympic_analysis_deployment](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/olympic_analysis_deployment) folder.
 
 ## 6. Improvements to the Analysis in the Future:
 

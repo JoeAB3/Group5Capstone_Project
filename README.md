@@ -183,7 +183,7 @@ Figure 8. The dashboard with the interactive elements.
 
 ## Dashboard Deployed in Heroku
 
-Our dashboard is deployed in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [olympic_analysis_deployment](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/olympic_analysis_deployment) folder.
+Our dashboard is deployed in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [heroku_deployment](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/heroku_deployment) folder.
 
 ## 5. Improvements to the Analysis in the Future:
 

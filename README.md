@@ -129,10 +129,7 @@ db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis
 db_string = 'sqlite:///db.sqlite'
 ```
 
-## 4. Presentation
-Link to Google Slides of presentation with speaker notes is [here](https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing).
-
-## 5. Dashboard
+## 4. Dashboard
 
 We will have two dashboards to display the findings of our project.  The **Data Exploration** dashboard will display charts showing patterns of the socioeconomic factors as well as the performance at the olympics among countries. These plots will be interactive, as the desire is to have the user be able to filter them by olympic year.  This dashboard will be built in `Tableau`.  The second dashboard will be build using `Flask` and `html` template with some interactive features in `JavaScript`.
 
@@ -176,10 +173,15 @@ Figure 9. Clustering of countries shown in different colors in the scatterplot a
 
 Our dashboard is deployed in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [olympic_analysis_deployment](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/olympic_analysis_deployment) folder.
 
-## 6. Improvements to the Analysis in the Future:
+## 5. Improvements to the Analysis in the Future:
 
-### Training and Testing of data with results
+The most important area to improve in this analysis could be the gathering of more information about other socioeconomic factors. This will allow to have a bigger sample size with the potential for a predictive analysis.  Below there is an analysis that shows how training and testing data could have been used.
+
+### Training and Testing of data with a limited size:
 Data was trained and testing by splitting the dataset into groups, with the training group consisting of 80 percent of the dataset while the testing group consisted of only 20 percent of the dataset. A random state of 10 was used to keep the training and testing groups the same over a period of multiple tests. The model was trained using a Linear Regression Model, allowing for a predictive linear regression chart to be created. However, due to the dataset not having enough data points present during the training and testing phases, the best choice was to switch to unsupervised learning in order to achieve optimal data analysis and exploration.
 
 ![Train and Test setup](https://user-images.githubusercontent.com/88119309/150042125-17407ac8-92d3-4895-adc4-9432ba68f03c.PNG)
 ![Linear Regression prediction](https://user-images.githubusercontent.com/88119309/150042166-ce0b390b-1e32-4db7-8abf-06edea53cef9.PNG)
+
+## 6. Presentation
+Link to Google Slides of presentation with speaker notes is [here](https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing).

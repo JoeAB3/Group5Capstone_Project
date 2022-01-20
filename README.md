@@ -32,29 +32,29 @@ Because the HDI has been only reported since 1990, we are considered only the fr
 
 We want to see how the economic factors have varied along the years for each country. Figure 2 shows scatterplots of the different socio-economic factors for the countries and for a specific Year.
 
-![econo1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/GDP.png)
+![econo1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/GDP.png)
 
-![econo2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/GNI.png)
+![econo2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Population.png)
 
-![econo3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/HDI.png)
-Figure 2. Economic Indicators vs. Olympic Year
+![econo3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/HDI.png)
+Figure 1. Economic Indicators vs. Olympic Year
 
 ### Olympic Performance per Country
 
 We also want to check how the countries perform at olympic games along the years. Figure 3 shows two of the plots we have created to see how is the participation of countries at the different olympic years.
 
-![olymps1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/bubbleChart.png)
+![olymps1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/bubbleChart.jpg)
 
-![olymps2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Top15_map.png)
-Figure 3. Performance (Top15) of each country by year
+![olymps2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Top15_map.png)
+Figure 2. Performance (Top15) of each country by year
 
 ### Scatter matrix between Indicators:
 
 To determine if there are indicators that are highly correlated between them, we perform a scattermatrix between the economic indicators and in our further analysis only considered indicators that are not correlated. Figure 1 shows the scattermatrix, where it is possible to see how `GDP` and `GNI` as well as `HDI` and `HDI Rank` are higly correlated
 
-![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Correlation.png)
+![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Correlation.png)
+Figure 3. Scattermatrix of all indicators
 
-Figure 1. Scattermatrix of all indicators
 ## 2. Machine Learning:
 
 In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notebook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
@@ -65,7 +65,7 @@ We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `P
 
 ### Description of preliminary feature engineering:
 
-Because we have several economic factors that could be related, we calculate the correlation between these factors. This was carried out by using the scatter matrix that is shown in Figure 1. After this process we keep the 4 factors/indicators previously listed.
+Because we have several economic factors that could be related, we calculate the correlation between these factors. This was carried out by using the scatter matrix that is shown in Figure 3. After this process we keep the 4 factors/indicators previously listed.
 
 ### Explanation of model choice, including limitations and benefits
 

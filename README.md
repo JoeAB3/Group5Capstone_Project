@@ -28,27 +28,33 @@ Individual GitHub branch for each team member.
 
 Because the HDI has been only reported since 1990, we are considered only the frame of time: 1990-2019. The data was explored so we can keep only the indicators that really could have an impact into the Olympic performance and that does not clutter the information we want to obtain.
 
-### Scatter matrix between Indicators:
-
-To determine if there are indicators that are highly correlated between them, we perform a scattermatrix between the economic indicators and in our further analysis only considered indicators that are not correlated. Figure 1 shows the scattermatrix, where it is possible to see how `GDP` and `GNI` as well as `HDI` and `HDI Rank` are higly correlated
-
-![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/scatterMatrix.png)
-Figure 1. Scattermatrix of all indicators
-
 ### Economic Indicators per Olympic Years:
 
-We want to see how the economic factors have varied along the years for each country, so we plot each indicator as a variable of the olympic years per country. We use `hvplot` library to make these plots and although in Pandas, the country can be chosen from a drop-down list bottom, it still is not possible in the python script. Figure 2 shows how the plot looks for a specific country.
+We want to see how the economic factors have varied along the years for each country. Figure 2 shows scatterplots of the different socio-economic factors for the countries and for a specific Year.
 
-![econo](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Indicators_OYears.png)
+![econo1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/GDP.png)
+
+![econo2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/GNI.png)
+
+![econo3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/HDI.png)
 Figure 2. Economic Indicators vs. Olympic Year
 
 ### Olympic Performance per Country
 
-We also want to check how the countries perform at olympic games along the years. Figure 3 is an example of the histogram that we made to show how is the participation of each country.
+We also want to check how the countries perform at olympic games along the years. Figure 3 shows two of the plots we have created to see how is the participation of countries at the different olympic years.
 
-![olymps](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Top15_OYear.png)
-Figure 3. Top15 Countries vs. Olympic Year
+![olymps1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/bubbleChart.png)
 
+![olymps2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Top15_map.png)
+Figure 3. Performance (Top15) of each country by year
+
+### Scatter matrix between Indicators:
+
+To determine if there are indicators that are highly correlated between them, we perform a scattermatrix between the economic indicators and in our further analysis only considered indicators that are not correlated. Figure 1 shows the scattermatrix, where it is possible to see how `GDP` and `GNI` as well as `HDI` and `HDI Rank` are higly correlated
+
+![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Correlation.png)
+
+Figure 1. Scattermatrix of all indicators
 ## 2. Machine Learning:
 
 In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notebook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
@@ -65,10 +71,9 @@ Because we have several economic factors that could be related, we calculate the
 
 Because we do not have any priori information about how the countries could be categorized depending on how they perform economically and at the Olympic Games, we want to explore if there is an actual separation or relationship among them.  In this way, we choose the widely known `K-means` algorithm. The benefit of using k-means is that is simple to implement, fast, and guarantees convergence. However, its limitation is that we need to assume prior information about the data, such the number of clusters (`k`). 
 
-### Training and Testing of data with results 
+### Training and Testing of data
 
 We do not have any training or testing data because our data does not provide any labeled data and furthermore our analyis does not require any training or testing process. However, as part of future improvements for our project we have explained in the **Improvents to the Analysis** section how we can set up a training and testing data.
-
 
 ## 3. Database:
 

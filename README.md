@@ -37,6 +37,7 @@ We want to see how the economic factors have varied along the years for each cou
 ![econo2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Population.png)
 
 ![econo3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/HDI.png)
+
 Figure 1. Economic Indicators vs. Olympic Year
 
 ### Olympic Performance per Country
@@ -53,6 +54,7 @@ Figure 2. Performance (Top15) of each country by year
 To determine if there are indicators that are highly correlated between them, we perform a scattermatrix between the economic indicators and in our further analysis only considered indicators that are not correlated. Figure 1 shows the scattermatrix, where it is possible to see how `GDP` and `GNI` as well as `HDI` and `HDI Rank` are higly correlated
 
 ![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Correlation.png)
+
 Figure 3. Scattermatrix of all indicators
 
 ## 2. Machine Learning:
@@ -131,34 +133,48 @@ db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis
 ```
 
 ## 4. Presentation
-Link to Google Slides of presentation is [here](https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing).
+Link to Google Slides of presentation with speaker notes is [here](https://docs.google.com/presentation/d/1uGkUmyf4gTuGKR7ov_M5aNJdvH7qaN4pgnWGX73oN0E/edit?usp=sharing).
 
 ## 5. Dashboard
 
-We will have two dashboards to display the findings of our project.  The **Data Exploration** dashboard will display the scatter matrix to illustrate how we chose our indicators. The dashboard will also show the plots for the economic indicators by year. These plots will be interactive, as the desire is to have the user be able to filter them by country. Lastly, the histogram showing a countries performance by olympic game will be used. This will also be filtered by country.  This dashboard will be built in `Tableau`.
+We will have two dashboards to display the findings of our project.  The **Data Exploration** dashboard will display charts showing patterns of the socioeconomic factors as well as the performance at the olympics among countries. These plots will be interactive, as the desire is to have the user be able to filter them by olympic year.  This dashboard will be built in `Tableau`.  The second dashboard will be build using `Flask` and `html` template with some interactive features in `JavaScript`.
+
+### Report from the data exploration:
+
+The `Tableau` dashboard allows the user to choose the year of the Olympic Game that wants to see, and displays the charts for the data exploration that were explained before. 
+
+![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/dashboard_1.png)
+
+![scatter](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/dashboard_2.png)
+
+Figure 6. Tableau Dashboard Overview
 
 ### Report from the machine learning task:
 
-A second dashboard built in `Flask` and `html` template will present the findings from our machine learning analysis. The `app.py`, `html` and `css` files are in the *PythonScripts* folder in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/PythonScripts). The `app.py` [script](https://github.com/JoeAB3/Group5Capstone_Project/blob/main/PythonScripts/app.py) manages the connection to a our local Postgres database, and load the **Analysis** table that we use as input for our [Unsupervised Learning model](https://github.com/JoeAB3/Group5Capstone_Project/blob/main/PythonScripts/clusteringData.py). This function will return two plots that show how the countries are distributed along the economic indicators and olympic performance that we are considering in our analysis. The `kmeans` clustering is performed for each Olympic year as we have described previously.  Figure 5 shows a screenshot of how the dashboard looks when the user visits it for the first time.
+A second dashboard will present the findings from our machine learning analysis. The `app.py`, `html` and `css` files are in the same folder in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/Flask_db_dashboard). The `app.py` manages the connection to a our sqlite database as well as the `html` template. 
 
-![dashboard](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/OverviewDashboard.png)
-Figure 5. An overview of the dashboard created for showing UML results.
+![dashboard](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/DashboardOverview.png)
+Figure 7. An overview of the dashboard created for showing ULM results.
 
-**The dashboard has an interactive element** that is a `selector` input with a `submit` button. These two elements jointly allow the user to choose what Olympic year wants to see. Figure 6 shows how these two elements are displayed in the dashboard page. The `html` [template](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/PythonScripts/templates/index.html) and the `css` [file](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/PythonScripts/static/assets/css/custom.css) that allows the user this interaction are upload.
+When the dashboard is open for the first time the database needs to be setup by creating the three tables shown in the ERD Diagram (Figure 4). This is performed after the `Loading` button is hit. Once the button indicates the process is finished. The user can use the selector to choose what Olympic year wants to see (Figure 8). After the user has chose the Year, a 3-d scatterplot and a world map are displayed. 
 
 ![dashboard1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Dashboard_Interaction.png)
-Figure 6. The dashboard with the interactive element.
 
-After the `submit` button is hit, a 3-d scatterplot and a world map are displayed as it is shown in Figure 7. 
+![dashboard2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Dashboard_Interaction2.png)
+Figure 8. The dashboard with the interactive elements.
 
-![dashboard2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/DashboardwResults.png)
-Figure 7. The dashboard displaying the results of the *UML*.
+**The dashboard has more than one interactive element:** 
 
-The scatterplot as well as the world map allow the user some interaction, as they allow the display of the country information as the data points (in the scatterplot) or the country (in the world map) are hovering in.
+1. The `Loading` button created in `JavaScript` has two icons that allows the user to check the time the database is being set.
+
+2. A `selector` input with a `submit` button. These two elements jointly allow the user to choose what Olympic year wants to see. 
+
+3. The scatterplot as well as the world map allow the user some interaction, as they allow the display of the country information as the data points (in the scatterplot) or the country (in the world map) are hovering in.
 
 ![dashboard3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/ScatterplotDashboard.png)
 ![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
-Figure 8. Clustering of countries shown in different colors in the scatterplot and world map.
+Figure 9. Clustering of countries shown in different colors in the scatterplot and world map.
+
 
 ## Improvements to the Analysis in the Future:
 

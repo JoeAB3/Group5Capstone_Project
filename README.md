@@ -79,11 +79,11 @@ We do not have any training or testing data because our data does not provide an
 
 ## 3. Database:
 
-Due to the nature of our data, we use a PostgreSQL database to save three tables: `Indicators`, `Olympics`, and `DataAnalysis`. Based on the two first tables, we create the third one with the economic indicators of our interest and the information about the Olympic Games. The Python sripts for the data exploration and analysis have code that fully integrate the database. The details are explained further.
+Due to the nature of our data, we use a SQL database to save three tables: `Indicators`, `Olympics`, and `DataAnalysis`. Based on the two first tables, we create the third one with the economic indicators of our interest and the information about the Olympic Games. During the development stage we use `PgAdmin` to create the database and storage the tables. However, for the deployment of our app in `Heroku` we have switched to `Sqlite`, so we do not need to have our database hosted in a web service. We can easily make this transition since we are using `SqlAlchemy` library that uses basically the same methods or functions for manage both kind of databases.
 
 ### Database stores static data for use during the project:
 
-The original raw data is access through API call from our application to the corresponding websites. After a cleaning process, the two tables are writen to `PostgreSQL` and from them another table is generated to be used in the Machine Learning Analysis. In the [PythonScripts] () folder there are the scripts that load the tables from internet and perform the initial cleaning for saving the tables into the database. 
+The original raw data is access through API calls from our application to the corresponding websites. After a cleaning process in Python, two tables are writen to the database and from them another table is generated to be used in the Machine Learning Analysis. In the [Flask_db_dashboard](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/Flask_db_dashboard) folder there are the scripts that load the tables from internet and perform the initial cleaning for saving the tables into the database. 
 
 ### Database interfaces with the project in some format:
 
@@ -118,18 +118,15 @@ data = pd.read_sql_query("""SELECT
 ```
 ### Includes at least one connection string:
 
-Each one of the tables are writen into the database using a connection strig as it is shown in the below piece of code:
+Each one of the tables are writen into the database (db) using a connection strig to the `SQL` db (during the development stage) and to the `SQLite` db.
 
+1. Connection string to a local db:
 ```python
 db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/OlympicAnalysis_FP"
-    #Create the database engine
-    engine = create_engine(db_string) 
-    ## Add olympics_df to a SQL db
-    olympic_df.to_sql(name = 'Olympics', con = engine, if_exists = 'replace', index = False) 
-    # Add primary keys
-    olympic_df.to_sql(con=engine, name='Olympics', if_exists='replace', index=False)   
-    with engine.connect() as con:
-        con.execute('ALTER TABLE "Olympics" ADD PRIMARY KEY ("CountryCode","Year");')
+```
+2. Connection string to sqlite db:
+```python
+db_string = 'sqlite:///db.sqlite'
 ```
 
 ## 4. Presentation
@@ -175,8 +172,11 @@ Figure 8. The dashboard with the interactive elements.
 ![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
 Figure 9. Clustering of countries shown in different colors in the scatterplot and world map.
 
+## Dashboard Deploy in Heroku
 
-## Improvements to the Analysis in the Future:
+Our dashboard is deploy in [Heroku](https://olympic-analysis-deployment.herokuapp.com/). The folder that contains all scripts and files required for the deployment process are in [olympic_analysis_deployment] (https://github.com/JoeAB3/Group5Capstone_Project/tree/main/olympic_analysis_deployment) folder.
+
+## 6. Improvements to the Analysis in the Future:
 
 ### Training and Testing of data with results
 Data was trained and testing by splitting the dataset into groups, with the training group consisting of 80 percent of the dataset while the testing group consisted of only 20 percent of the dataset. A random state of 10 was used to keep the training and testing groups the same over a period of multiple tests. The model was trained using a Linear Regression Model, allowing for a predictive linear regression chart to be created. However, due to the dataset not having enough data points present during the training and testing phases, the best choice was to switch to unsupervised learning in order to achieve optimal data analysis and exploration.

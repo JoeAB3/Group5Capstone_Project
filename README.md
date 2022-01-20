@@ -13,9 +13,9 @@ The team is interested in economics and sports
 
 ## Description of source of data:
 
-Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/CodeInJupyter/).
+Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/CodeInJupyter/).
 
-For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/Leidy_dbpart/PythonScripts).
+For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/PythonScripts).
 
 ## Communication Protocols:
 
@@ -61,17 +61,15 @@ We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `P
 
 Because we have several economic factors that could be related, we calculate the correlation between these factors. This was carried out by using the scatter matrix that is shown in Figure 1. After this process we keep the 4 factors/indicators previously listed.
 
-### Training and Testing of data with results
-Data was trained and testing by splitting the dataset into groups, with the training group consisting of 80 percent of the dataset while the testing group consisted of only 20 percent of the dataset. A random state of 10 was used to keep the training and testing groups the same over a period of multiple tests. The model was trained using a Linear Regression Model, allowing for a predictive linear regression chart to be created. However, due to the dataset not having enough data points present during the training and testing phases, the best choice was to switch to unsupervised learning in order to achieve optimal data analysis and exploration.
-
-![Train and Test setup](https://user-images.githubusercontent.com/88119309/150042125-17407ac8-92d3-4895-adc4-9432ba68f03c.PNG)
-![Linear Regression prediction](https://user-images.githubusercontent.com/88119309/150042166-ce0b390b-1e32-4db7-8abf-06edea53cef9.PNG)
-
-
 ### Explanation of model choice, including limitations and benefits
 
 Because we do not have any priori information about how the countries could be categorized depending on how they perform economically and at the Olympic Games, we want to explore if there is an actual separation or relationship among them.  In this way, we choose the widely known `K-means` algorithm. The benefit of using k-means is that is simple to implement, fast, and guarantees convergence. However, its limitation is that we need to assume prior information about the data, such the number of clusters (`k`). 
- 
+
+### Training and Testing of data with results 
+
+We do not have any training or testing data because our data does not provide any labeled data and furthermore our analyis does not require any training or testing process. However, as part of future improvements for our project we have explained in the **Improvents to the Analysis** section how we can set up a training and testing data.
+
+
 ## 3. Database:
 
 Due to the nature of our data, we use a PostgreSQL database to save three tables: `Indicators`, `Olympics`, and `DataAnalysis`. Based on the two first tables, we create the third one with the economic indicators of our interest and the information about the Olympic Games. The Python sripts for the data exploration and analysis have code that fully integrate the database. The details are explained further.
@@ -156,3 +154,11 @@ The scatterplot as well as the world map allow the user some interaction, as the
 ![dashboard3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/ScatterplotDashboard.png)
 ![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
 Figure 8. Clustering of countries shown in different colors in the scatterplot and world map.
+
+## Improvements to the Analysis in the Future:
+
+### Training and Testing of data with results
+Data was trained and testing by splitting the dataset into groups, with the training group consisting of 80 percent of the dataset while the testing group consisted of only 20 percent of the dataset. A random state of 10 was used to keep the training and testing groups the same over a period of multiple tests. The model was trained using a Linear Regression Model, allowing for a predictive linear regression chart to be created. However, due to the dataset not having enough data points present during the training and testing phases, the best choice was to switch to unsupervised learning in order to achieve optimal data analysis and exploration.
+
+![Train and Test setup](https://user-images.githubusercontent.com/88119309/150042125-17407ac8-92d3-4895-adc4-9432ba68f03c.PNG)
+![Linear Regression prediction](https://user-images.githubusercontent.com/88119309/150042166-ce0b390b-1e32-4db7-8abf-06edea53cef9.PNG)

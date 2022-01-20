@@ -153,14 +153,14 @@ Figure 6. Tableau Dashboard Overview
 
 A second dashboard will present the findings from our machine learning analysis. The `app.py`, `html` and `css` files are in the same folder in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/Flask_db_dashboard). The `app.py` manages the connection to a our sqlite database as well as the `html` template. 
 
-![dashboard](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/DashboardOverview.png)
-Figure 7. An overview of the dashboard created for showing ULM results.
+![dashboard](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/DashboardOverview.png)
+Figure 7. An overview of the dashboard created for showing UML results.
 
 When the dashboard is open for the first time the database needs to be setup by creating the three tables shown in the ERD Diagram (Figure 4). This is performed after the `Loading` button is hit. Once the button indicates the process is finished. The user can use the selector to choose what Olympic year wants to see (Figure 8). After the user has chose the Year, a 3-d scatterplot and a world map are displayed. 
 
-![dashboard1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Dashboard_Interaction.png)
+![dashboard1](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Dashboard_Interaction.png)
 
-![dashboard2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/Dashboard_Interaction2.png)
+![dashboard2](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/main/ImagesReadme/Dashboard_Interaction2.png)
 Figure 8. The dashboard with the interactive elements.
 
 **The dashboard has more than one interactive element:** 

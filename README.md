@@ -4,18 +4,18 @@ In our final project, we are interested in analyze how different economic factor
 
 ## Reason we chose this topic:
 
-The team is interested in economics and sports
+The team is interested in economics and sports. We like the idea to analyze if certain living conditions could affect the performance of activities such as sports.
 
 ## Questions we hope to answer with the data:
 
-- Does a countries HDI, annual GDP or total population contribute to a countries performance at the olympics?
 - How are countries distributed depending on their economic factors and performance at the Olympics? Is there some natural clustering?
+- Does a countries HDI, annual GDP or total population contribute to a countries performance at the olympics?
 
 ## Description of source of data:
 
 Economic Indicators will be draw from the [**World Bank Data Catalog**](https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators) that has around 1453 indicators compiled from official sources around the world (204 countries are considered). And from [**United Nations**](http://hdr.undp.org/en/indicators/137506#), that is the *Human Development Index(HDI)*, which "measures average achievement in three basic dimensions of human development: long and healthy life, knowledge and decent standard of living. The data sets are in `csv` format and an initially exploration is made in `Python-Pandas Library`. The jupyter notebook is found [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/CodeInJupyter/).
 
-For the Olympic data various data sources were identified for this data.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/PythonScripts).
+For the Olympic data various data sources were identified from **kaggle**.  We identified all the competiting countires in each Summer Olympic games.  Another data source found the placing  for each olympic event.  An additional data set was pulled in to find how many events were participated in.  All these data were used for the primary Olympic data set. The cleaning was as well made in `Python` and the code to do it is in [here](https://github.com/JoeAB3/Group5Capstone_Project/tree/main/PythonScripts).
 
 ## Communication Protocols:
 
@@ -59,11 +59,17 @@ Figure 3. Scattermatrix of all indicators
 
 ## 2. Machine Learning:
 
-In order to answer the second question of our project, we want to apply an unsupervised machine learning algorithm, so we can categorized countries into groups without having any previous information about their membership. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notebook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
+Considering the characteristics of the data:
+
+- The number of participating countries by olympic game is about 100-150, so this is a relatively small number of samples to train (Machine learning models are data greedy).
+- There is a lack of information about the economic factors for some of the countries.
+- The olympic games have been highly dominated for a handful number of countries (i.e. it is a highly skewed data)
+
+We have considered to use an unsupervised machine learning algorithm to give answer to our initial question. We have used `k-means` and the `Elbow Curve` Method for estimating a possible number of groups.  An initial exploration of this analysis is in jupyter notebook in [here](https://github.com/JoeAB3/Group5Capstone_Project/blob/Leidy_dbpart/CodeInJupyter/Analysis_KmeansPlots.ipynb)
 
 ### Description of preliminary data preprocessing: 
 
-We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `Population`, `Top15` for each country and each Olympic Game.  Because there are multiple values for the same parameters (since we are considering 7 olympic games), we are going to consider an analyis per Olympic Game. This means, will have a clustering of the countries per each Olympic year.
+We are going to apply `k-means` in a dataset with 4 indicators: `GDP`, `HDI`, `Population`, `Top15` for each country and each Olympic Game.  Our analysis considers each Olympic Game as a separate dataset in which the machine learning model is applied. In addition, we have considered that it has more sense to used the countries' socioeconomic factors corresponding to the years previous to the years of the Olympic games.
 
 ### Description of preliminary feature engineering:
 
@@ -75,7 +81,17 @@ Because we do not have any priori information about how the countries could be c
 
 ### Training and Testing of data
 
-We do not have any training or testing data because our data does not provide any labeled data and furthermore our analyis does not require any training or testing process. However, as part of future improvements for our project we have explained in the **Improvents to the Analysis** section how we can set up a training and testing data.
+We do not have any training or testing data because our data does not provide any labeled data and furthermore our analyis does not require any training or testing process. However, as part of future improvements for our project we have explained in the **Improvents to the Analysis** section how we could have set up a training and testing data.
+
+### Results of our model
+
+The results of our model are shown as scatterplots and worldmaps showing the countries in different colors according with the assignation the model has made. Figure 4 shows an example of these results (These plots correspond to **Barcelona 1992**)  
+
+![dashboard3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/ScatterplotDashboard.png)
+![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
+Figure 4. Clustering of countries shown in different colors in the scatterplot and world map.
+
+The scatterplots show how countries with poor performance at the Olympics also have low economic indicators, as well as countries with good performance usually have high indicators. The worldmap shows the geographical distribution of these clusters and how developed countries (i.e. USA,Europe) are grouped in the same cluster, as so on.
 
 ## 3. Database:
 
@@ -164,10 +180,6 @@ Figure 8. The dashboard with the interactive elements.
 2. A `selector` input with a `submit` button. These two elements jointly allow the user to choose what Olympic year wants to see. 
 
 3. The scatterplot as well as the world map allow the user some interaction, as they allow the display of the country information as the data points (in the scatterplot) or the country (in the world map) are hovering in.
-
-![dashboard3](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/ScatterplotDashboard.png)
-![dashboard4](https://raw.githubusercontent.com/JoeAB3/Group5Capstone_Project/Leidy_dbpart/ImagesReadme/worldMapDashboard.png)
-Figure 9. Clustering of countries shown in different colors in the scatterplot and world map.
 
 ## Dashboard Deployed in Heroku
 
